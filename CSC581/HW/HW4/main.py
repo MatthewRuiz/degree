@@ -35,7 +35,10 @@ class Main:
 
 
     def get_char_frequency(self, char):
-        row = string.ascii_lowercase.index(char.lower())
+        if char is '@':
+            row = 26
+        else:
+            row = string.ascii_lowercase.index(char.lower())
         frequency = 0
         for freq in self.chars_xy[row]:
             frequency += int(freq)
@@ -109,20 +112,20 @@ class Main:
 
 # The following functions are used to create char[x] and char[x,y] matrices
 ##########################################################################################
-    # def set_char_frequencies(self):
-    #     for row in self.load_csv():
-    #
-    #         words = self.tokens(row)
-    #         self.WORDS.extend(words)
-    #
-    #         for word in words:
-    #             self.store_xy_frequencies(word)
+#    def set_char_frequencies(self):
+#        for row in self.load_csv():
+#    
+#            words = self.tokens(row)
+#            self.WORDS.extend(words)
+#    
+#            for word in words:
+#                self.store_xy_frequencies(word)
 
 
-    # def store_xy_frequencies(self, word):
-    #     for x in range(len(word) - 1):
-    #         first_letter = word[x]
-    #         second_letter = word[x + 1]
-    #         row = string.ascii_lowercase.index(first_letter)
-    #         column = string.ascii_lowercase.index(second_letter)
-    #         self.chars_xy[row][column] += 1
+    #def store_xy_frequencies(self, word):
+    #    for x in range(len(word) - 1):
+    #        first_letter = word[x]
+    #        second_letter = word[x + 1]
+    #        row = string.ascii_lowercase.index(first_letter)
+    #        column = string.ascii_lowercase.index(second_letter)
+    #        self.chars_xy[row][column] += 1
