@@ -118,7 +118,7 @@ def edits1(word):
     return set(word_deletes + word_transposes + word_replaces + word_inserts)
 
 def deletes(pairs):
-    return [a + b[1:] for (a, b) in pairs if b]
+    return [(a + b[1:], counter) for counter, (a,b) in enumerate(pairs) if b]
 
 def custom_deletes(pairs):
     for counter, (a, b) in enumerate(pairs):

@@ -35,7 +35,7 @@ class Main:
 
 
     def get_char_frequency(self, char):
-        if char is '@':
+        if char is '#':
             row = 26
         else:
             row = string.ascii_lowercase.index(char.lower())
